@@ -1,0 +1,95 @@
+@use "../utils/variable";
+@use "layout";
+@use "header";
+@use "main/index";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+footer {
+    padding: 1rem 0;
+    text-align: center;
+    background-color: variable.$primary-color;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+}
+
+.btn-outline {
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    border: 2px solid variable.$secondary-color;
+    font-weight: 500;
+    display: inline-block;
+    cursor: pointer;
+
+    &__primary {
+        @extend .btn-outline;
+        color: variable.$primary-color;
+    }
+
+    &__secondary {
+        @extend .btn-outline;
+        color: black;
+    }
+
+    &__disable {
+        @extend .btn-outline;
+        color: variable.$secondary-color;
+    }
+
+    &__active {
+        @extend .btn-outline;
+        color: variable.$color_1;
+        border: 2px solid variable.$color_2 !important;
+    }
+}
+
+.btn__primary {
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.slider-navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 200vh;
+    width: 70%;
+    background-color: white;
+    padding: 3rem;
+    box-shadow: 3px 3px 13px 5px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 3px 3px 13px 5px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 3px 3px 13px 5px rgba(0, 0, 0, 0.25);
+    z-index: 999;
+    display: none;
+
+    nav {
+        a {
+            @extend %anchor-text;
+            display: block;
+        }
+
+        & a:not(:first-child) {
+            margin-top: 1.5rem;
+        }
+    }
+
+    .btn {
+        margin-top: 1.5rem;
+    }
+
+    &.show {
+        display: block;
+    }
+}

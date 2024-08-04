@@ -1,0 +1,90 @@
+@use "../../utils/mixins" as *;
+@use "../../utils/variable" as *;
+
+#invitation {
+    background-color: $bg-event;
+    padding: {
+        top: 4rem;
+    }
+
+    .container {
+        .title {
+            @include text-title($primary-color, 0 2rem, fit-content);
+
+            h1 {
+                margin: {
+                    left: auto;
+                    right: auto;
+                }
+            }
+        }
+
+        .btn {
+            @include btn__primary(
+                $primary-color,
+                url("/public/assets/icon/arrow-right.png"),
+                white
+            );
+
+            margin: 0 auto 2rem auto;
+        }
+
+        .image-wrapper {
+            @include layoutResponsif(repeat(1, 1fr), 1rem);
+
+            figure {
+                @include image(100%, fit-content);
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    #invitation {
+        .container {
+            .title {
+                @include text-title($primary-color, 0 auto, 500px);
+
+                h1 {
+                    width: 600px;
+                }
+            }
+
+            .image-wrapper {
+                @include layoutResponsif(repeat(2, 1fr), 1rem);
+
+                figure {
+                    @include image(240px, fit-content);
+                    justify-self: center;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    #invitation {
+        position: relative;
+
+        .container {
+            .image-wrapper {
+                @include layoutResponsif(repeat(5, 1fr), 0);
+
+                figure {
+                    justify-self: center;
+
+                    &.end {
+                        align-self: self-end;
+                    }
+                }
+            }
+
+            .btn {
+                position: absolute;
+                top: 45%;
+                left: 50%;
+                transform: translate(-50%, -45%);
+            }
+        }
+    }
+}

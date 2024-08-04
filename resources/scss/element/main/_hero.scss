@@ -1,0 +1,268 @@
+@use "../../utils/mixins" as *;
+@use "../../utils/variable" as *;
+
+main {
+    #hero {
+        @include layoutResponsif(repeat(1, 1fr), 2rem);
+        background-image: url("../../../public/assets/hero-bg.png");
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: 500px 600px;
+        background-position-y: 10%;
+        margin-top: 1rem;
+
+        #hero_1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .text {
+                .btn {
+                    margin-bottom: 1rem;
+                }
+
+                h1 {
+                    font-size: 2.5rem;
+                    word-break: break-all;
+                }
+            }
+
+            .card {
+                box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+                padding: 2rem;
+                border-radius: 20px;
+                margin: 2rem 0;
+                background-color: white;
+
+                .head {
+                    @extend #hero_1;
+                    margin-bottom: 1rem;
+
+                    .tree {
+                        display: flex;
+                        align-items: end;
+                        margin-bottom: 1rem;
+
+                        figure {
+                            @include image(40px, 40px);
+                            & {
+                              margin-right: 0.5rem
+                            };
+                        }
+
+                        .count {
+                            display: flex;
+                            align-items: end;
+                            color: $primary-color;
+
+                            h2 {
+                                font-size: 2rem;
+                            }
+                        }
+                    }
+
+                    .btn {
+                        @include btn__primary(
+                            $primary-color,
+                            url("/public/assets/icon/arrow-right.png"),
+                            white
+                        );
+                    }
+                }
+
+                .body {
+                    [type="range"]:focus {
+                        outline: none;
+                    }
+
+                    input[type="range"] {
+                        /* removing default appearance */
+                        -webkit-appearance: none;
+                        appearance: none;
+                        /* creating a custom design */
+                        width: 100%;
+                        height: 16px;
+                        cursor: pointer;
+                        outline: none;
+                        border-radius: 15px;
+                        /*  overflow: hidden;  remove this line*/
+
+                        /* New additions */
+                        background: #eff7ef;
+                        background: linear-gradient(
+                            to right,
+                            $primary-color 38%,
+                            #ccc 38%
+                        );
+                    }
+
+                    /* Thumb: webkit */
+                    input[type="range"]::-webkit-slider-thumb {
+                        /* removing default appearance */
+                        -webkit-appearance: none;
+                        appearance: none;
+                        /* creating a custom design */
+                        height: 16px;
+                        width: 16px;
+                        background-color: $primary-color;
+                        border-radius: 50%;
+                        border: none;
+                    }
+
+                    /* Thumb: Firefox */
+                    input[type="range"]::-moz-range-thumb {
+                        height: 16px;
+                        width: 16px;
+                        background-color: $primary-color;
+                        border-radius: 50%;
+                        border: none;
+                    }
+                }
+            }
+
+            figure {
+                @include image(100%, 249px);
+            }
+        }
+        #hero_2 {
+            h1 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .wrapper-button {
+                margin-bottom: 1.5rem;
+
+                .btn:first-child {
+                    margin-right: 0.2rem;
+                }
+            }
+
+            .item-donation {
+                display: flex;
+                align-items: center;
+                padding: 0.8rem 0;
+                border-bottom: 2px solid $secondary-color;
+
+                p {
+                    font-size: 0.6rem;
+                    font-weight: 500;
+                }
+
+                .number-donation {
+                    width: 48px;
+                    height: 48px;
+                    border-radius: 50%;
+                    color: white;
+                    @include center-anything();
+                    margin-right: 1rem;
+                    font-weight: 700;
+
+                    &__01 {
+                        @extend .number-donation;
+                        background-color: $primary-color;
+                    }
+
+                    &__02 {
+                        @extend .number-donation;
+                        background-color: $color_2;
+                    }
+
+                    &__03 {
+                        @extend .number-donation;
+                        background-color: $color_3;
+                    }
+                }
+
+                .people {
+                    @extend .item-donation;
+                    border-bottom: none;
+                    padding: 0;
+                    flex-grow: 1;
+
+                    figure {
+                        @include image(60px, 60px);
+                        margin-right: 0.5rem;
+                    }
+                }
+
+                .tree {
+                    @extend .item-donation;
+                    align-items: end;
+                    border-bottom: none;
+                    padding: 0;
+
+                    figure {
+                        @include image(30px, 30px);
+                        margin-right: 0.5rem;
+                    }
+
+                    .count {
+                        display: flex;
+                        align-items: end;
+                        color: $primary-color;
+
+                        h3 {
+                            margin-right: 0.2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    main {
+        #hero {
+            margin-top: 0;
+
+            #hero_1 {
+                .text {
+                    h1 {
+                        word-break: normal;
+                    }
+                }
+
+                .card {
+                    .head {
+                        align-items: center;
+                        flex-direction: row !important;
+
+                        .tree {
+                            margin-bottom: 0 !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    main {
+        #hero {
+            @include layoutResponsif(repeat(2, 1fr), 0);
+            #hero_1 {
+                border-right: 2px solid $secondary-color;
+
+                .text {
+                    padding: 2rem 4rem 0 2rem;
+                }
+
+                .card {
+                    margin: 0 4rem 0 2rem;
+
+                    .head {
+                        border: none;
+                        align-items: center;
+                        flex-direction: row;
+                    }
+                }
+            }
+            #hero_2 {
+                padding: 2rem 0 2rem 3rem;
+            }
+        }
+    }
+}

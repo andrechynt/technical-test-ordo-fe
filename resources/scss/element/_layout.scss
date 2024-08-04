@@ -1,0 +1,59 @@
+@use "../utils/mixins" as *;
+@use "../utils/variable" as *;
+
+.container {
+    @include container(none);
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+
+  .swiper-wrapper {
+      .swiper-slide {
+          @include image(100%, 320px);
+          border-radius: 20px;
+      }
+  }
+
+  .swiper-button-next:after, .swiper-button-prev:after {
+    font-size: 1.5rem;
+    color: white;
+    padding: 1rem;
+    background-color: $primary-color;
+    border-radius: 5px;
+  }
+
+  .swiper-button-next:after {
+    margin-right: 1rem;
+  }
+
+  .swiper-button-prev:after {
+    margin-left: 1rem;
+  }
+}
+
+@media (min-width: 575.98px) {
+    .container {
+        @include container(540px);
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        @include container(720px);
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        @include container(1200px);
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        @include container(1440px);
+    }
+}

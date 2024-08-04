@@ -1,0 +1,118 @@
+@use "../../utils/mixins" as *;
+@use "../../utils/variable" as *;
+
+#event {
+    background-color: $bg-event;
+    padding: {
+        top: 4rem;
+        bottom: 4rem;
+    }
+
+    .container {
+        .title {
+            @include text-title($primary-color, 0 2rem, fit-content);
+        }
+
+        .detail {
+            @include layoutResponsif(repeat(1, 1fr), 2rem);
+            background-color: white;
+            border-radius: 30px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+
+            .content {
+                h3 {
+                    color: $primary-color;
+                    margin-bottom: 0.5rem;
+                }
+
+                h2 {
+                    margin-bottom: 0.5rem;
+                }
+
+                p {
+                    width: 80%;
+                    text-align: left;
+                    line-height: 1.6;
+                }
+
+                .line {
+                    width: 100%;
+                    height: 1px;
+                    background-color: $secondary-color;
+                    margin: 1.5rem 0;
+                }
+
+                .btn {
+                    @include btn__primary(
+                        $primary-color,
+                        url("/public/assets/icon/arrow-right.png"),
+                        white
+                    );
+                }
+            }
+        }
+
+        .list-activity {
+            @include layoutResponsif(repeat(1, 1fr), 2rem);
+
+            .item-activity {
+                .line {
+                    width: 100%;
+                    height: 4px;
+                    border-radius: 4px;
+                    background-color: $secondary-color;
+                    margin-bottom: 1rem;
+
+                    &.active {
+                        background-color: $primary-color;
+                    }
+                }
+
+                h3 {
+                    margin-bottom: 0.5rem;
+                }
+
+                p {
+                    line-height: 1.6;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    #event {
+        .container {
+            .title {
+                @include text-title($primary-color, 0 auto, 500px);
+            }
+
+            .detail {
+                @include layoutResponsif(repeat(2, 1fr), 2rem);
+
+                .content {
+                  align-self: center
+                }
+            }
+
+            .list-activity {
+                @include layoutResponsif(repeat(3, 1fr), 2rem);
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    #event {
+        .container {
+            .title {
+                @include text-title($primary-color, 0 auto, 610px);
+            }
+
+            .list-activity {
+                @include layoutResponsif(repeat(5, 1fr), 2rem);
+            }
+        }
+    }
+}

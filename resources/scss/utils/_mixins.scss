@@ -1,0 +1,73 @@
+@mixin container($max-width) {
+    width: 100%;
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: {
+        left: 1rem;
+        right: 1rem;
+    }
+}
+
+@mixin center-anything() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin layoutResponsif($column, $gap) {
+    display: grid;
+    grid-template-columns: $column;
+    gap: $gap;
+}
+
+@mixin image($width, $height) {
+    width: $width;
+    height: $height;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@mixin text-title($color-title, $margin-p, $width-p) {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: $color-title;
+    }
+
+    p {
+        margin: $margin-p;
+        word-break: break-all;
+        width: $width-p;
+        line-height: 1.6;
+    }
+}
+
+@mixin btn__primary($bg-color, $icon, $color, $icon-color: white) {
+    background-color: $bg-color;
+    color: $color;
+
+    &::after {
+        content: "";
+        background-image: $icon;
+        background-size: 18px 18px;
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+        margin-left: 0.2rem;
+        color: $icon-color;
+    }
+}
+
+%anchor-text {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
