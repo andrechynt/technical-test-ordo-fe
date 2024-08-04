@@ -59,7 +59,7 @@ $personalPackages = array(
       <p>Our sponsorship package offers branding, promotional opportunities, and visibility at our event, ideal for enhancing company presence and community engagement.</p>
     </div>
     <div class="personal">
-      <h3>Personal Sponsorship Package</h3>
+      <h2>Personal Sponsorship Package</h2>
       <div class="table-container">
         <table>
           <tr>
@@ -102,7 +102,7 @@ $personalPackages = array(
     </div>
     <div class="line"></div>
     <div class="corporate">
-      <h3>Corporate Sponsorship Package</h3>
+      <h2>Corporate Sponsorship Package</h2>
       <div class="table-container">
         <table>
           <tr>

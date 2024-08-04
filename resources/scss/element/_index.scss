@@ -11,9 +11,9 @@
 }
 
 footer {
-    padding: 1rem 0;
+    padding: 1.5rem 0;
     text-align: center;
-    background-color: variable.$primary-color;
+    background-color: variable.$bg-footer;
     font-size: 1rem;
     font-weight: 700;
     color: white;
@@ -63,16 +63,16 @@ footer {
 .slider-navbar {
     position: fixed;
     top: 0;
-    right: 0;
+    right: -900px;
     height: 200vh;
-    width: 70%;
+    width: 60%;
     background-color: white;
     padding: 3rem;
     box-shadow: 3px 3px 13px 5px rgba(0, 0, 0, 0.25);
     -webkit-box-shadow: 3px 3px 13px 5px rgba(0, 0, 0, 0.25);
     -moz-box-shadow: 3px 3px 13px 5px rgba(0, 0, 0, 0.25);
     z-index: 999;
-    display: none;
+    transition: all 0.5s ease-in-out;
 
     nav {
         a {
@@ -90,6 +90,27 @@ footer {
     }
 
     &.show {
-        display: block;
+        right: 0;
     }
+}
+
+.backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 200vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: none;
+
+  &.show {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .slider-navbar {
+    width: 45%;
+  }
 }

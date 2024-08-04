@@ -50,19 +50,32 @@
     }
 }
 
-@mixin btn__primary($bg-color, $icon, $color, $icon-color: white) {
+@mixin btn__primary($bg-color, $icon, $color, $icon-color: white, $after: true) {
     background-color: $bg-color;
     color: $color;
 
-    &::after {
-        content: "";
-        background-image: $icon;
-        background-size: 18px 18px;
-        width: 18px;
-        height: 18px;
-        display: inline-block;
-        margin-left: 0.2rem;
-        color: $icon-color;
+    @if $after {
+        &::after {
+            content: "";
+            background-image: $icon;
+            background-size: 18px 18px;
+            width: 18px;
+            height: 18px;
+            display: inline-block;
+            margin-left: 0.5rem;
+            color: $icon-color;
+        }
+    } @else {
+        &::before {
+            content: "";
+            background-image: $icon;
+            background-size: 18px 18px;
+            width: 18px;
+            height: 18px;
+            display: inline-block;
+            margin-right: 0.5rem;
+            color: $icon-color;
+        }
     }
 }
 

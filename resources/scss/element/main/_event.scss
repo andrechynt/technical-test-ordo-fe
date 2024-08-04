@@ -46,8 +46,9 @@
                 .btn {
                     @include btn__primary(
                         $primary-color,
-                        url("/public/assets/icon/arrow-right.png"),
-                        white
+                        url("/public/assets/icon/detail.png"),
+                        white,
+                        $after: false
                     );
                 }
             }
@@ -78,6 +79,37 @@
                 }
             }
         }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+
+            .swiper-wrapper {
+                .swiper-slide {
+                    @include image(100%, 320px);
+                    border-radius: 20px;
+                }
+            }
+
+            .swiper-button-next:after,
+            .swiper-button-prev:after {
+                font-size: 1.5rem;
+                color: white;
+                padding: 0.6rem 1rem;
+                background-color: $primary-color;
+                border-radius: 10px;
+                font-weight: 900;
+            }
+
+            .swiper-button-next:after {
+                margin-right: 1.5rem;
+            }
+
+            .swiper-button-prev:after {
+                margin-left: 1.5rem;
+            }
+        }
     }
 }
 
@@ -92,7 +124,7 @@
                 @include layoutResponsif(repeat(2, 1fr), 2rem);
 
                 .content {
-                  align-self: center
+                    align-self: center;
                 }
             }
 

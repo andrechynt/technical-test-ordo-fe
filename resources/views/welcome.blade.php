@@ -8,6 +8,7 @@
         @vite(['resources/scss/app.scss'])
     </head>
     <body>
+      <div class="backdrop"></div>
       <header>
        <div class="container">
           <img src="{{ asset('assets/logo.png') }}" alt="">

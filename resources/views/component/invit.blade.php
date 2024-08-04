@@ -10,13 +10,13 @@
       <figure>
         <img src="{{{ asset('assets/footer/image-1.png') }}}" alt="">
       </figure>
-      <figure class="end">
+      <figure>
         <img src="{{{ asset('assets/footer/image-2.png') }}}" alt="">
       </figure>
-      <figure class="end">
+      <figure>
         <img src="{{{ asset('assets/footer/image-3.png') }}}" alt="">
       </figure>
-      <figure class="end">
+      <figure>
         <img src="{{{ asset('assets/footer/image-4.png') }}}" alt="">
       </figure>
       <figure>
