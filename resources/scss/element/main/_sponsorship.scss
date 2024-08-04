@@ -10,7 +10,6 @@
     .container {
         .title {
             @include text-title($color-sponsor, 0 2rem, fit-content);
-            margin-bottom: 3rem;
         }
 
         .personal {

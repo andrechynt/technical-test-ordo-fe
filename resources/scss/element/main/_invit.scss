@@ -72,6 +72,10 @@
         position: relative;
 
         .container {
+            .title {
+                margin-bottom: 0;
+            }
+
             .image-wrapper {
                 @include layoutResponsif(repeat(5, 1fr), 0);
 
@@ -86,9 +90,9 @@
 
             .btn {
                 position: absolute;
-                top: 45%;
+                top: 42%;
                 left: 50%;
-                transform: translate(-50%, -45%);
+                transform: translate(-50%, -42%);
             }
         }
     }
