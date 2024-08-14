@@ -45,7 +45,6 @@
       </main>
       <footer>Created By: Mochammad Andre Cahyanto</footer>
 
-      <script src='https://cdnjs.cloudflare.com/ajax/libs/countup.js/1.8.2/countUp.min.js'></script>
       @vite(["resources/js/app.js"])
     </body>
 </html>
