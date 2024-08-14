@@ -7,6 +7,10 @@ header {
     top: 0;
     background-color: white;
     z-index: 9;
+    
+    &.show {
+      border-bottom: 1px solid $secondary-color;
+    }
 
     .container {
         @include center_anything();
@@ -71,3 +75,5 @@ header {
         }
     }
 }
+
+

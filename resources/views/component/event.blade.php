@@ -29,7 +29,7 @@
         <div class="swiper-button-prev"></div>
       </div>
     </div>
-    <div class="list-activity">
+    <div class="list-activity" id="item">
       <div class="item-activity">
         <div class="line active"></div>
         <h3>01</h3>

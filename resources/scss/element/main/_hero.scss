@@ -24,6 +24,7 @@ main {
                 h1 {
                     font-size: 2.5rem;
                     word-break: break-all;
+                    font-weight: 700;
                 }
             }
 
@@ -46,8 +47,8 @@ main {
                         figure {
                             @include image(40px, 40px);
                             & {
-                              margin-right: 0.5rem
-                            };
+                                margin-right: 0.5rem;
+                            }
                         }
 
                         .count {
@@ -57,6 +58,10 @@ main {
 
                             h2 {
                                 font-size: 2rem;
+                            }
+
+                            p {
+                                color: #1d4009;
                             }
                         }
                     }
@@ -88,12 +93,7 @@ main {
                         /*  overflow: hidden;  remove this line*/
 
                         /* New additions */
-                        background: #eff7ef;
-                        background: linear-gradient(
-                            to right,
-                            $primary-color 38%,
-                            #ccc 38%
-                        );
+                        animation: anim-input 1s linear forwards;
                     }
 
                     /* Thumb: webkit */
@@ -216,6 +216,7 @@ main {
     main {
         #hero {
             margin-top: 0;
+            justify-content: unset;
 
             #hero_1 {
                 .text {
@@ -225,6 +226,7 @@ main {
                 }
 
                 .card {
+                    margin: 3.5rem 4rem auto 2rem;
                     .head {
                         align-items: center;
                         flex-direction: row !important;
@@ -242,7 +244,9 @@ main {
 @media (min-width: 992px) {
     main {
         #hero {
+            position: relative;
             @include layoutResponsif(repeat(2, 1fr), 0);
+
             #hero_1 {
                 border-right: 2px solid $secondary-color;
 
@@ -251,18 +255,45 @@ main {
                 }
 
                 .card {
-                    margin: 0 4rem 0 2rem;
-
                     .head {
                         border: none;
                         align-items: center;
                         flex-direction: row;
                     }
                 }
+
+                #image-hero {
+                    @include image(770px, 249px);
+                    left: -50px;
+                    position: absolute;
+                    bottom: 0;
+                }
             }
             #hero_2 {
                 padding: 2rem 0 2rem 3rem;
             }
         }
+    }
+}
+
+@keyframes anim-input {
+    0% {
+        background: linear-gradient(to right, $primary-color 0%, #ccc 0%);
+    }
+
+    25% {
+        background: linear-gradient(to right, $primary-color 10%, #ccc 10%);
+    }
+
+    50% {
+        background: linear-gradient(to right, $primary-color 19%, #ccc 19%);
+    }
+
+    75% {
+        background: linear-gradient(to right, $primary-color 29%, #ccc 29%);
+    }
+
+    100% {
+        background: linear-gradient(to right, $primary-color 38%, #ccc 38%);
     }
 }

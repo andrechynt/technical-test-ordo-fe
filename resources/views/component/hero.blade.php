@@ -52,17 +52,17 @@ $donations = array(
             <img src="{{{ asset('assets/mangrove.png') }}}" alt="">
           </figure>
           <div class="count">
-            <h2>5,690</h2>
+            <h2 id="treeCount">0</h2>
             <p>/10,000 Pohon</p>
           </div>
         </div>
         <div class="btn btn__primary">Support Our Mission</div>
       </div>
       <div class="body">
-        <input type="range" id="volume" name="volume" min="0" max="10" value="3.8" step="0.1" disabled/>
+        <input type="range" id="volume" name="volume" min="0" max="10" value="0" step="0.1" disabled/>
       </div>
     </div>
-    <figure>
+    <figure id="image-hero">
       <img src="{{{ asset('assets/image-hero.png') }}}" alt="" srcset="">
     </figure>
   </section>
