@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
         getInputRange.value = 3.8;
     }, 1000);
 
-    const countUp = new CountUp("treeCount", 5234);
+    const countUp = new CountUp("treeCount", 5690);
 
     countUp.start();
 });
